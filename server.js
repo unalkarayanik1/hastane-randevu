@@ -1,15 +1,12 @@
 const express = require("express");
 const app = express();
 
-app.use(express.json());
-app.use(express.static("public"));
-
-app.get("/", (req, res) => {
-  res.send("Server Çalışıyor");
-});
-
 const PORT = process.env.PORT || 3000;
 
+app.get("/", (req, res) => {
+  res.send("Server Started");
+});
+
 app.listen(PORT, () => {
-  console.log("Server Started");
+  console.log("Server Started on port " + PORT);
 });
