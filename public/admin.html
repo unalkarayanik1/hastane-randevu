@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Admin Panel</h1>
+
+<input id="name" placeholder="Ad">
+<input id="branch" placeholder="Branş">
+<input id="gender" placeholder="Cinsiyet">
+<input id="city" placeholder="Şehir">
+<input id="hospital" placeholder="Hastane">
+
+<button onclick="addDoctor()">Ekle</button>
+
+<script>
+async function addDoctor(){
+await fetch("/api/doctors",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+name:name.value,
+branch:branch.value,
+gender:gender.value,
+city:city.value,
+hospital:hospital.value
+})
+});
+alert("Eklendi");
+}
+</script>
+</body>
+</html>
