@@ -5,10 +5,9 @@ const PORT = process.env.PORT || 3000;
 
 // Ana sayfa
 app.get("/", (req, res) => {
-  res.send(`
-    <h1>Hastane Randevu Sistemi</h1>
-    <a href="/randevu">Randevu Ara</a>
-  `);
+app.get("/test", (req, res) => {
+  res.send("YENI KOD BURADA");
+});
 });
 
 // Randevu + filtre sayfası
